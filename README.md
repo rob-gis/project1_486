@@ -1,12 +1,12 @@
-# GIS Project Proposal
-## Mapping Contamination from Pharmaceutical and Personal Care Products (PPCPs) in Maryland
+# GIS Project # 1
+## Major Sewage Overflow Events and Poverty in Baltimore
 ### Topic 
-I intend to map sites of reported PPCP contamination in Maryland, providing a visual representation for the public of areas of concern. I will map **sites where contamination has been reported**, along with **which contaminants** and **what concentrations** have been detected. 
+Sewage overflow events are major sources of contamination in waterways and present risks to public health. They tend to occur when sewage lines are outdated in need of repairs. Within Baltimore, as the map demonstrates, these events tend to occur most often in areas of higher poverty.
 ### Data 
-I will make use primarily of data collected by NOAA on [PPCP contamination in the tissue of oysters](https://repository.library.noaa.gov/view/noaa/20268) in the Cheseapeake Bay. I may also examine other data sources relevant to the topic, such as this study by Arikan et al. (2008) on [antibiotics and hormones in the Choptank River](https://www.sciencedirect.com/science/article/abs/pii/S0011916408001434).
+To plot data on sewage overflow events, I made use of the Maryland Department of the Environment, Reported Sewer Overflow Database. For data on poverty, I used percent of food stamp recipients from the 2019 ACS.
 ### Transformations
-NOAA collected samples of oysters at seven sites along the Chesapeake. I will aggregate the date by **collection site** and **class/purpose** of drugs, for example, antibiotics, painkillers, or antidepressants
+Using R and tinycensus, I was able to create a data set on the share of food stamp recipients by census tract within the City of Baltimore. In QGIS, I mapped these along a color gradient. I imported data from the MDE on sewage overflow events and created a shapefile from it. I then plotted data points by size of overflow event, with the largest events in gallons of sewage displayed as the largest points. I ignored the many minor overflow events (under 10,000 gallons).
 ### Analysis
-Additionally, I will map nearby wastewater treatment plants and agricultural zones. I will examine whether WWTPs or intensive agriculture may be responsible for higher concentrations of PPCPs.
+The map shows that major sewage overflow events correlate closely to areas of poverty in Baltimore, as measured by percent of food stamp recipients. 
 ### Outputs
-I will produce a series of maps organized by drug class/purpose detailing the sites of PPCP contamination.
+Map showing Percent of Food Stamp Recipents vs. Major Sewage Overflow Events
